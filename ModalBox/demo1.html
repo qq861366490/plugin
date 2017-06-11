@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		.container {
+			width: 280px;
+			margin: 100px auto;
+		}
+		.input {
+			float: left;
+			display: inline-block;
+			width: 198px;
+			height: 38px;
+			line-height: 38px;
+			text-indent: 10px;
+			border: 1px solid #999;
+		}
+		.btn {
+			float: left;
+			display: inline-block;
+			width: 80px;
+			height: 40px;
+			background: #c33;
+			color: #fff;
+			text-align: center;
+			line-height: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container clearfix">
+		<input type="text" class="input" id="chooseCon" />
+		<!--<div class="input" id="chooseCon"></div>-->
+		<a href="javascript:;" class="btn" id="chooseBtn">按钮</a>
+	</div> 
+	<script src="modal-box.js"></script>
+	<script>
+		var arr = [
+			'选项选项选项一',
+			'选项选项选二',
+			'选项选项选项三',
+			'选项选项项四',
+			'选项选项选项五',
+			'选项项选项六'
+		];
+		var text = '以下选项可供选择：';
+		//第一个参数 按钮元素的class、id、元素变量名（可为变量）
+		//第二个参数 显示选中数据的元素的class、id、元素变量名（可为变量）
+		//第三个参数数组，需要传的数据
+		//第四个参数对象object（可不填）
+		var box = new ModalBox('#chooseBtn','#chooseCon',arr,{
+			text: text, //可选，默认‘请选择：’
+			move: true, //可选，默认false,true开启拖拽模态框
+			resiz: true //可选，默认false,true开启窗口onresiz事件模态框始终居中
+		});
+	</script>
+</body>
+</html>

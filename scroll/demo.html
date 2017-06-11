@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		/*例子一*/
+		.scroll-container {
+			margin-top: 100px;
+		}
+		/*容器宽高需要设置*/
+		.scroll-container .scroll-wrapper {
+			width: 500px;
+			height: 250px;
+		}
+		/*滚动区域自定义，宽不用设置*/
+		.scroll-container .scroll-wrapper .scroll-content {
+			height: 900px;
+			border-bottom: 5px solid blue;
+			background-color: #6c6a73;
+			box-sizing: border-box;
+		}
+
+		/*例子二*/
+		.scroll-container2{
+			margin-top: 20px;
+		}
+		/*容器宽高需要设置*/
+		.scroll-container2 .scroll-wrapper {
+			width: 300px;
+			height: 300px;
+		}
+		/*滚动区域自定义，宽不用设置*/
+		.scroll-container2 .scroll-wrapper .scroll-content {
+			height: 600px;
+			border-bottom: 10px solid red;
+			background-color: #999;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="scroll-container" id="scroll-container">
+		<div class="scroll-wrapper">
+			<div class="scroll-content">
+				我是内容1
+				<br /><br /><br />
+				<br /><br /><br />
+				我是内容2<br /><br />
+				<br /><br /><br />
+				我是内容3<br /><br /><br /><br />
+				<br /><br /><br />我是内容4
+					<br /><br /><br /><br />
+				我是内容5<br /><br /><br /><br />
+				<br />我是内容6v
+				<br /><br /><br /><br />
+				我是内容7<br /><br /><br /><br />
+				<br /> 
+				我是内容8
+			</div>
+		</div>
+		<div class="scroll-bar">
+			<div class="scroll-block"></div>
+		</div>
+	</div>
+	<div class="scroll-container2" id="scroll-container2">
+		<div class="scroll-wrapper">
+			<div class="scroll-content">
+				我是内容1
+				<br /><br /><br />
+				<br /><br /><br />
+				我是内容2<br /><br />
+				<br /><br /><br />
+				我是内容3<br /><br /><br /><br />
+				<br /><br /><br />我是内容4
+					<br /><br /><br /><br />
+				我是内容5<br /><br /><br /><br />
+				<br />我是内容6v
+				<br /><br /><br /><br />
+				我是内容7<br /><br /><br /><br />
+				<br /> 
+				我是内容8
+			</div>
+		</div>
+		<div class="scroll-bar">
+			<div class="scroll-block"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="my_scroll.js"></script>
+	<script type="text/javascript">
+		//选择器可传class或者id
+		var MyScroll1 = new Scroll('.scroll-container',{
+			//属性值均为String型或Number型
+			blockWidth: '12',      	//滑块scroll-block宽 默认8
+			blockHeight: '12',		//滑块scroll-block高 默认16
+			blockColor: 'blue',		//滑块scroll-block颜色 默认灰色grey 可为字母单词、#000、rgb
+			blockRadius: '50%',		//滑块scroll-block圆角 默认10 可为数值、百分比
+			barWidth: '4',			//滑块滚动区域（父级盒子scroll-bar）的宽 默认10
+			barColor: '#c33',		//滑块滚动区域（父级盒子scroll-bar）的背景颜色 默认#ccc
+			speed: '10',			//鼠标滚轮速度 默认为5，0或0到1的小数停止滚动，可为负值、小数
+			hover: true				//鼠标划入显示滚动条划出隐藏，默认false关闭，true开启
+		});
+		// MyScroll1.scrollShow();  //滚动条显示
+		//MyScroll1.scrollHide();  //滚动条隐藏
+		var MyScroll2 = new Scroll('#scroll-container2');
+	</script>
+</body>
+</html>
